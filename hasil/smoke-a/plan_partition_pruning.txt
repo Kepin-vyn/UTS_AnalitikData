@@ -4,10 +4,10 @@
 
 
 (1) BatchScan lake.curated.orders_clean
-Output [7]: [run_id#2936, order_id#2937L, sale_date#2938, city#2939, product_id#2940, quantity#2941, amount#2942L]
+Output [7]: [run_id#2948, order_id#2949L, sale_date#2950, city#2951, product_id#2952, quantity#2953, amount#2954L]
 lake.curated.orders_clean (branch=null) [filters=sale_date IS NOT NULL, sale_date = 20701, groupedBy=]
 
 (2) ColumnarToRow [codegen id : 1]
-Input [7]: [run_id#2936, order_id#2937L, sale_date#2938, city#2939, product_id#2940, quantity#2941, amount#2942L]
+Input [7]: [run_id#2948, order_id#2949L, sale_date#2950, city#2951, product_id#2952, quantity#2953, amount#2954L]
 
 
