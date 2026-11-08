@@ -39,7 +39,12 @@ def rows_to_dict(rows, keys, metrics):
 
 def pause(enabled, message):
     if enabled:
-        input(f"\n[PAUSE] {message}\nBuka http://localhost:4040, lalu tekan Enter ... ")
+        import os
+        seconds = int(os.getenv("PAUSE_SECONDS", "90"))
+        print(f"\n[PAUSE] {message}\n"
+              f"Buka http://localhost:4040. Lanjut otomatis dalam {seconds} detik ...",
+              flush=True)
+        time.sleep(seconds)
 
 
 def main():
