@@ -1,0 +1,6 @@
+experiment,seconds
+A_groupby_baseline,1.4241
+B_skew_before,0.3175
+C_skew_after_salting,0.6809
+D_sort_merge_join,16.7978
+E_broadcast_join,1.6666

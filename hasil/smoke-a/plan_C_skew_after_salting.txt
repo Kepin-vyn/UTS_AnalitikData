@@ -25,7 +25,7 @@ Output [3]: [city#26, amount#6L, salt#1218L]
 Arguments: [city#26, amount#6L, salt#1218L]
 
 (2) InMemoryRelation
-Arguments: [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L, salt#1218L], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@51d5942d,StorageLevel(disk, memory, 1 replicas),Exchange hashpartitioning(city#26, salt#1218L, 8), REPARTITION_BY_NUM, [plan_id=183]
+Arguments: [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L, salt#1218L], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@4a085dfa,StorageLevel(disk, memory, 1 replicas),Exchange hashpartitioning(city#26, salt#1218L, 8), REPARTITION_BY_NUM, [plan_id=183]
 +- *(1) Project [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L, pmod(xxhash64(order_id#1L, 42), 16) AS salt#1218L]
    +- InMemoryTableScan [amount#6L, city#26, order_id#1L, product_id#4, quantity#5, run_id#0, sale_date#35]
          +- InMemoryRelation [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L], StorageLevel(disk, memory, 1 replicas)
@@ -44,7 +44,7 @@ Output [7]: [amount#6L, city#26, order_id#1L, product_id#4, quantity#5, run_id#0
 Arguments: [amount#6L, city#26, order_id#1L, product_id#4, quantity#5, run_id#0, sale_date#35]
 
 (4) InMemoryRelation
-Arguments: [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@51d5942d,StorageLevel(disk, memory, 1 replicas),SortAggregate(key=[run_id#0, order_id#1L], functions=[first(sale_date#35, false), first(city#26, false), first(product_id#4, false), first(quantity#5, false), first(amount#6L, false)], output=[run_id#0, order_id#1L, sale_date#62, city#54, product_id#56, quantity#58, amount#60L])
+Arguments: [run_id#0, order_id#1L, sale_date#35, city#26, product_id#4, quantity#5, amount#6L], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@4a085dfa,StorageLevel(disk, memory, 1 replicas),SortAggregate(key=[run_id#0, order_id#1L], functions=[first(sale_date#35, false), first(city#26, false), first(product_id#4, false), first(quantity#5, false), first(amount#6L, false)], output=[run_id#0, order_id#1L, sale_date#62, city#54, product_id#56, quantity#58, amount#60L])
 +- *(2) Sort [run_id#0 ASC NULLS FIRST, order_id#1L ASC NULLS FIRST], false, 0
    +- Exchange hashpartitioning(run_id#0, order_id#1L, 8), ENSURE_REQUIREMENTS, [plan_id=50]
       +- SortAggregate(key=[run_id#0, order_id#1L], functions=[partial_first(sale_date#35, false), partial_first(city#26, false), partial_first(product_id#4, false), partial_first(quantity#5, false), partial_first(amount#6L, false)], output=[run_id#0, order_id#1L, first#73, valueSet#74, first#75, valueSet#76, first#77, valueSet#78, first#79, valueSet#80, first#81L, valueSet#82])
